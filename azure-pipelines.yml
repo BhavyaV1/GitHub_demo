@@ -8,13 +8,8 @@
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
-resources:
-  pipelines:
-  - pipeline: 'Stitch' # Name of the pipeline resource.
-    source: 'Pipelines/BhavyaV1/GitHub_demo'# The name of the pipeline referenced by this pipeline resource.
-    trigger:
-      branches: 
-      -  main
+trigger:
+  -  main
 variables:
   DBT_CLOUD_API_TOKEN: $(API Token)
 
