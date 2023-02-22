@@ -11,12 +11,12 @@
 trigger:
 - main
 
-schedules:
- - cron: "0 3 * * *"
-   displayName: Runs at 3
-   branches:
-    include:
-     - daily-run
+resources:
+  pipelines:
+  - pipeline: stitch_job # Name of the pipeline resource.
+    source: stitch_jo-ci # The name of the pipeline referenced by this pipeline resource.
+    #project: FabrikamProject Required only if the source pipeline is in another project
+    trigger: true
 variables:
   DBT_CLOUD_API_TOKEN: $(API Token)
 
