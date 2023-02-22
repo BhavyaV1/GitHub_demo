@@ -11,11 +11,12 @@
 trigger:
 - main
 
-pr:
-  branches:
+schedules:
+ - cron: "0 3 * * *"
+   displayName: Runs at 3
+   branches:
     include:
-    - main
-  
+     - daily-run
 variables:
   DBT_CLOUD_API_TOKEN: $(API Token)
 
