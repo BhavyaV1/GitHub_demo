@@ -8,15 +8,13 @@
 # Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/python
 
-trigger:
-- main
-schedules:
- - cron: "0 3 * * *"
-   displayName: Runs at 3
-   branches:
-    include:
-     - daily-run
-
+resources:
+  pipelines:
+  - pipeline: setupPython37 # Name of the pipeline resource.
+    source: 'Pipelines/BhavyaV1/GitHub_demo'# The name of the pipeline referenced by this pipeline resource.
+    trigger:
+      branches: 
+      -  main
 variables:
   DBT_CLOUD_API_TOKEN: $(API Token)
 
