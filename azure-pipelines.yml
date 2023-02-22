@@ -47,7 +47,7 @@ stages:
     condition: succeeded('setup')
     steps:
     - script: 
-        python stitch_job.py
+        python .github/workflows/stitch_job.py
 
 
   - job: DBT
@@ -55,12 +55,4 @@ stages:
     condition: succeeded('stich')
     steps:
     - script: 
-       python dbt.py
-        
-        
-  - job: Power_Bi
-    dependsOn: DBT
-    condition: succeeded('DBT')
-    steps:
-    - script: 
-        python power_bi.py
+       python .github/workflows/dbt.py
