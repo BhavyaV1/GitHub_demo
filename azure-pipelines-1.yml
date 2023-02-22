@@ -57,9 +57,4 @@ stages:
        python .github/workflows/dbt.py
         
         
-  - job: Power_Bi
-    dependsOn: DBT
-    condition: succeeded('DBT')
-    steps:
-    - script: 
-        python .github/workflows/power_bi.py
+
