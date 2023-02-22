@@ -10,7 +10,7 @@
 
 resources:
   pipelines:
-  - pipeline: setupPython37 # Name of the pipeline resource.
+  - pipeline: 'Stitch' # Name of the pipeline resource.
     source: 'Pipelines/BhavyaV1/GitHub_demo'# The name of the pipeline referenced by this pipeline resource.
     trigger:
       branches: 
